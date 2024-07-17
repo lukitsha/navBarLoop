@@ -2,10 +2,9 @@
 /*
 Plugin Name: Navbar Personalizada 
 Description: A plugin to create a custom course menu with categories and courses.
-Version: 0.1.2
+Version: 0.1.5
 Author: Luca Gaido
 */
-
 // Evita el acceso directo
 if (!defined('ABSPATH')) {
     exit;
@@ -40,25 +39,38 @@ function custom_dynamic_course_menu_shortcode() {
     ?>
     <div class="custom-menu">
         <div class="main-menu">
-            <div><a href="<?php echo home_url(); ?>">Home</a></div>
-            <div class="courses-menu-item"><a href="#">Cursos</a></div>
-            <div><a href="<?php echo home_url('/contacto'); ?>">Contacto</a></div>
-            <div><a href="<?php echo home_url('/aula-virtual'); ?>">Aula Virtual</a></div>
+            <div class="logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo plugin_dir_url(__FILE__) . 'images/logo.png'; ?>" alt="Logo"></a></div>
+            <div class="menu-items">
+                <div><a href="<?php echo home_url(); ?>">Home</a></div>
+                <div class="courses-menu-item"><a href="#" class="open-fullscreen">Cursos</a></div>
+                <div><a href="<?php echo home_url('/contacto'); ?>">Contacto</a></div>
+                <div><a href="<?php echo home_url('/aula-virtual'); ?>">Aula Virtual</a></div>
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="https://www.svgrepo.com/show/327400/logo-tiktok.svg" alt="TikTok" class="social-icon"></a>
+                <a href="#"><img src="https://www.svgrepo.com/show/25418/instagram.svg" alt="Instagram" class="social-icon"></a>
+                <a href="#"><img src="https://www.svgrepo.com/show/3885/facebook.svg" alt="Facebook" class="social-icon"></a>
+                <a href="#"><img src="https://www.svgrepo.com/show/108614/linkedin.svg" alt="LinkedIn" class="social-icon"></a>
+            </div>
+            <div class="menu-toggle"><span>&#9776;</span></div>
         </div>
     </div>
-    <div class="custom-dynamic-course-menu" style="display: none;">
-        <div class="course-categories-column">
-            <div class="course-categories">
-                <?php foreach ($categories as $category): ?>
-                    <div class="category-item" data-category-id="<?php echo esc_attr($category->term_id); ?>">
-                        <a href="#"><?php echo esc_html($category->name); ?></a>
-                    </div>
-                <?php endforeach; ?>
+    <div class="fullscreen-panel">
+        <button class="close-button">&times;</button>
+        <div class="custom-dynamic-course-menu">
+            <div class="course-categories-column">
+                <div class="course-categories">
+                    <?php foreach ($categories as $category): ?>
+                        <div class="category-item" data-category-id="<?php echo esc_attr($category->term_id); ?>">
+                            <a href="#"><?php echo esc_html($category->name); ?></a>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
-        </div>
-        <div class="course-list-column">
-            <div class="loading" style="display: none;">Cargando...</div>
-            <div class="course-list"></div>
+            <div class="course-list-column">
+                <div class="loading" style="display: none;">Cargando...</div>
+                <div class="course-list"></div>
+            </div>
         </div>
     </div>
     <?php
@@ -113,3 +125,4 @@ function get_all_courses() {
 
 add_action('wp_ajax_get_all_courses', 'get_all_courses');
 add_action('wp_ajax_nopriv_get_all_courses', 'get_all_courses');
+?>
