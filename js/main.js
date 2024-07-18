@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeButton = document.querySelector('.close-button');
     const menuToggle = document.querySelector('.menu-toggle');
     const menuItems = document.querySelector('.menu-items');
-    const socialIcons = document.querySelector('.social-icons');
 
     // Agregar evento para abrir el panel en pantalla completa
     document.querySelector('.open-fullscreen').addEventListener('click', function () {
@@ -19,6 +18,5 @@ document.addEventListener('DOMContentLoaded', function () {
     // Agregar evento para el menú hamburguesa
     menuToggle.addEventListener('click', function () {
         menuItems.classList.toggle('active');
-        socialIcons.classList.toggle('active');
     });
 });

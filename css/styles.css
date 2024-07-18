@@ -14,6 +14,7 @@
 
 .menu-items {
     display: flex;
+    align-items: center;
 }
 
 .menu-items div {
@@ -31,16 +32,6 @@
 
 .main-menu a:hover {
     background: #e5e5e5;
-}
-
-.social-icons {
-    display: flex;
-}
-
-.social-icon {
-    width: 24px;
-    height: 24px;
-    margin-left: 10px;
 }
 
 .custom-dynamic-course-menu {
@@ -163,7 +154,7 @@
 
 /* Mobile styles */
 @media (max-width: 768px) {
-    .menu-items, .social-icons {
+    .menu-items {
         display: none;
     }
     .menu-toggle {
