@@ -2,9 +2,10 @@
 /*
 Plugin Name: Navbar Personalizada 
 Description: A plugin to create a custom course menu with categories and courses.
-Version: 0.2.0
+Version: 0.2.2
 Author: Luca Gaido
 */
+
 // Evita el acceso directo
 if (!defined('ABSPATH')) {
     exit;
@@ -42,7 +43,7 @@ function custom_dynamic_course_menu_shortcode() {
             <div class="logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo plugin_dir_url(__FILE__) . 'images/logo.png'; ?>" alt="Logo"></a></div>
             <div class="menu-items">
                 <div><a href="<?php echo home_url(); ?>">Home</a></div>
-                <div class="courses-menu-item"><a href="#" class="open-fullscreen">Cursos</a></div>
+                <div class="courses-menu-item"><a href="#">Cursos</a></div>
                 <div><a href="<?php echo home_url('/contacto'); ?>">Contacto</a></div>
                 <div><a href="<?php echo home_url('/aula-virtual'); ?>">Aula Virtual</a></div>
             </div>
