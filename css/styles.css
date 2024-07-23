@@ -42,12 +42,13 @@
 
 .custom-dynamic-course-menu {
     display: flex;
-    position: absolute;
+    position: fixed; /* Cambiado de absolute a fixed */
     width: 100%;
     background-color: #181818;
     color: white;
     z-index: 1000;
-    top: 70px; /* Ajusta esto según la altura de tu navbar */
+    top: 0; /* Ajustado para que no genere margen blanco */
+    margin-top: 170px; /* Ajuste para que el contenido esté desplazado hacia abajo */
 }
 
 .loading {
@@ -134,34 +135,6 @@
 
 .fullscreen-panel.active {
     display: block; /* Mostrar cuando esté activo */
-}
-
-.close-button {
-    position: fixed;
-    top: 80px;
-    right: 20px;
-    background-color: #522dd7;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1001;
-    opacity: 1; /* Asegura que no tenga opacidad */
-}
-
-/* Si hay bordes blancos, ocultarlos */
-.fullscreen-panel .close-button::before,
-.fullscreen-panel .close-button::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -10px;
-    bottom: -10px;
-    left: -10px;
-    right: -10px;
-    background: transparent; /* Asegura que el fondo sea transparente */
-    opacity: 0; /* Asegura que la opacidad sea 0 */
 }
 
 .menu-toggle {
