@@ -2,7 +2,7 @@
 /*
 Plugin Name: Navbar Personalizada 
 Description: A plugin to create a custom course menu with categories and courses.
-Version: 0.2.2
+Version: 0.2.5
 Author: Luca Gaido
 */
 

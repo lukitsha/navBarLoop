@@ -137,9 +137,9 @@
 }
 
 .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    position: fixed;
+    top: 80px;
+    right: 20px;
     background-color: #522dd7;
     color: white;
     border: none;
@@ -147,6 +147,21 @@
     border-radius: 50%;
     cursor: pointer;
     z-index: 1001;
+    opacity: 1; /* Asegura que no tenga opacidad */
+}
+
+/* Si hay bordes blancos, ocultarlos */
+.fullscreen-panel .close-button::before,
+.fullscreen-panel .close-button::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    background: transparent; /* Asegura que el fondo sea transparente */
+    opacity: 0; /* Asegura que la opacidad sea 0 */
 }
 
 .menu-toggle {
