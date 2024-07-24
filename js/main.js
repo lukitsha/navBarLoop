@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const coursesMenuItem = document.querySelector('.courses-menu-item');
-    const dynamicMenu = document.querySelector('.custom-dynamic-course-menu');
+    const dynamicMenu = document.querySelector('.fullscreen-panel .custom-dynamic-course-menu');
     const loadingElement = document.querySelector('.course-list-column .loading');
     const courseList = document.querySelector('.course-list');
     const menuToggle = document.querySelector('.menu-toggle');
@@ -8,21 +8,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let allCourses = [];
 
-    coursesMenuItem.addEventListener('mouseover', function (e) {
-        dynamicMenu.style.display = 'flex';
-        loadingElement.style.display = 'block';
-        courseList.innerHTML = '';
-
-        if (allCourses.length === 0) {
-            fetchCourses();
+    coursesMenuItem.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (dynamicMenu.parentElement.classList.contains('active')) {
+            dynamicMenu.parentElement.classList.remove('active');
         } else {
-            loadingElement.style.display = 'none';
-            document.querySelector('.category-item').click();
-        }
-    });
+            dynamicMenu.parentElement.classList.add('active');
+            loadingElement.style.display = 'block';
+            courseList.innerHTML = '';
 
-    dynamicMenu.addEventListener('mouseleave', function (e) {
-        dynamicMenu.style.display = 'none';
+            if (allCourses.length === 0) {
+                fetchCourses();
+            } else {
+                loadingElement.style.display = 'none';
+                document.querySelector('.category-item').click();
+            }
+        }
     });
 
     function fetchCourses() {
