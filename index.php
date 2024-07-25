@@ -2,9 +2,10 @@
 /*
 Plugin Name: Navbar Personalizada 
 Description: A plugin to create a custom course menu with categories and courses.
-Version: 0.2.6
+Version: 0.2.7
 Author: Luca Gaido
 */
+
 
 // Evita el acceso directo
 if (!defined('ABSPATH')) {
@@ -51,7 +52,6 @@ function custom_dynamic_course_menu_shortcode() {
         </div>
     </div>
     <div class="fullscreen-panel">
-        <button class="close-button">&times;</button>
         <div class="custom-dynamic-course-menu">
             <div class="course-categories-column">
                 <div class="course-categories">
