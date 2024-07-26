@@ -7,6 +7,7 @@
     justify-content: center; /* Centra el menú en la vista de escritorio */
     align-items: center;
     position: relative;
+    z-index: 10000; /* Asegura que la barra de navegación esté en un nivel superior */
 }
 
 .logo {
@@ -46,9 +47,8 @@
     width: 100%;
     background-color: #181818;
     color: white;
-    z-index: 1000;
-    top: 0; /* Ajustado para que no genere margen blanco */
-    margin-top: 170px; /* Ajuste para que el contenido esté desplazado hacia abajo */
+    z-index: 9999; /* Asegura que el menú desplegable esté en un nivel superior */
+    margin-top: 70px; /* Ajuste para que el contenido esté desplazado hacia abajo */
 }
 
 .loading {
@@ -128,13 +128,27 @@
     width: 100%;
     height: calc(100% - 70px); /* Ajusta esto según la altura de tu navbar */
     background-color: white;
-    z-index: 1000;
+    z-index: 9999; /* Asegura que el panel de pantalla completa esté en un nivel superior */
     overflow: auto;
     display: none; /* Inicialmente oculto */
 }
 
 .fullscreen-panel.active {
     display: block; /* Mostrar cuando esté activo */
+}
+
+.close-button {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background-color: #522dd7;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000; /* Asegura que el botón de cierre esté en un nivel superior */
+    opacity: 1; /* Asegura que no tenga opacidad */
 }
 
 .menu-toggle {

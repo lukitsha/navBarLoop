@@ -10,20 +10,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     coursesMenuItem.addEventListener('click', function (e) {
         e.preventDefault();
-        if (dynamicMenu.parentElement.classList.contains('active')) {
-            dynamicMenu.parentElement.classList.remove('active');
-        } else {
-            dynamicMenu.parentElement.classList.add('active');
-            loadingElement.style.display = 'block';
-            courseList.innerHTML = '';
+        dynamicMenu.parentElement.classList.add('active');
+        loadingElement.style.display = 'block';
+        courseList.innerHTML = '';
 
-            if (allCourses.length === 0) {
-                fetchCourses();
-            } else {
-                loadingElement.style.display = 'none';
-                document.querySelector('.category-item').click();
-            }
+        if (allCourses.length === 0) {
+            fetchCourses();
+        } else {
+            loadingElement.style.display = 'none';
+            document.querySelector('.category-item').click();
         }
+
+        // Cierra el menú hamburguesa si está abierto
+        if (menuItems.classList.contains('active')) {
+            menuItems.classList.remove('active');
+        }
+    });
+
+    document.querySelector('.fullscreen-panel .close-button').addEventListener('click', function () {
+        dynamicMenu.parentElement.classList.remove('active');
     });
 
     function fetchCourses() {
