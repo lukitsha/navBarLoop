@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     coursesMenuItem.addEventListener('click', function (e) {
         e.preventDefault();
-        dynamicMenu.parentElement.classList.add('active');
+        dynamicMenu.parentElement.classList.toggle('active');
         loadingElement.style.display = 'block';
         courseList.innerHTML = '';
 
@@ -27,8 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.querySelector('.fullscreen-panel .close-button').addEventListener('click', function () {
-        dynamicMenu.parentElement.classList.remove('active');
+    document.addEventListener('click', function (e) {
+        if (!dynamicMenu.contains(e.target) && !coursesMenuItem.contains(e.target)) {
+            dynamicMenu.parentElement.classList.remove('active');
+        }
     });
 
     function fetchCourses() {
@@ -67,14 +69,4 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error('Error fetching courses:', error);
             });
     }
-
-    // Agregar evento para el menú hamburguesa
-    menuToggle.addEventListener('click', function () {
-        menuItems.classList.toggle('active');
-        if (menuItems.classList.contains('active')) {
-            menuItems.style.top = document.querySelector('.main-menu').offsetHeight + 'px';
-        } else {
-            menuItems.style.top = '0';
-        }
-    });
 });
