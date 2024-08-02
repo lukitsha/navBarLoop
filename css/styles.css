@@ -1,5 +1,5 @@
 .custom-menu {
-    margin-bottom: 20px;
+    margin-bottom: 0px; /* Reducir el margen inferior */
 }
 
 .main-menu {
@@ -8,11 +8,15 @@
     align-items: center;
     position: relative;
     z-index: 10000;
+    padding-bottom: 0px; /* Añadir un relleno inferior */
+    margin-left: auto; /* Aplicar margin-left auto en vista desktop */
+    margin-right: 0; /* No margin-right en vista desktop */
 }
 
 .logo {
     position: absolute;
     left: 0;
+    margin-top: 10px; /* Ajuste del margen superior para el logo */
 }
 
 .logo img {
@@ -31,32 +35,41 @@
 
 .main-menu a {
     text-decoration: none;
-    color: #333;
-    padding: 10px;
+    color: #522DD7; /* Color de la fuente de los botones */
+    padding: 7px; /* Reducir padding a 7px */
     background: none;
     border: none;
     font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
-    font-weight: 300;
-    font-size: 16px;
+    font-weight: 400; /* Cambiar font-weight a 400 */
+    font-size: 18px; /* Cambiar tamaño de fuente a 18px */
 }
 
 .main-menu a:hover {
     background: none;
 }
 
-.courses-menu-item::after {
+.courses-menu-item::after,
+.loopian-menu-item::after {
     content: '\25BC'; /* Símbolo de flecha hacia abajo */
     margin-left: 5px;
+    color: #522DD7; /* Color de la flecha */
 }
 
-.custom-dynamic-course-menu {
+.courses-menu-item.open::after,
+.loopian-menu-item.open::after {
+    content: '\25B2'; /* Símbolo de flecha hacia arriba */
+    color: #522DD7; /* Color de la flecha */
+}
+
+.custom-dynamic-course-menu,
+.custom-loopian-menu {
     display: flex;
     position: fixed;
     width: 100%;
     background-color: #181818;
     color: white;
     z-index: 9999;
-    margin-top: 70px;
+    margin-top: 40px; /* Ajuste para reducir la altura del contenido */
 }
 
 .loading {
@@ -64,23 +77,25 @@
     font-size: 20px;
 }
 
-.course-categories-column, .course-list-column {
-    width: 50%;
+.course-categories-column, .course-list-column, .loopian-menu-column {
+    width: 100%;
     max-height: 400px;
     overflow-y: auto;
     padding: 10px;
 }
 
-.course-categories {
+.course-categories, .loopian-menu {
     padding: 0;
     margin: 0;
 }
 
-.course-categories .category-item {
+.course-categories .category-item,
+.loopian-menu .loopian-item {
     margin-bottom: 10px;
 }
 
-.course-categories .category-item > a {
+.course-categories .category-item > a,
+.loopian-menu .loopian-item > a {
     display: block;
     padding: 10px;
     background: #181818;
@@ -90,7 +105,9 @@
 }
 
 .course-categories .category-item:hover > a, 
-.course-categories .category-item.active > a {
+.course-categories .category-item.active > a,
+.loopian-menu .loopian-item:hover > a,
+.loopian-menu .loopian-item.active > a {
     background: #522dd7;
 }
 
@@ -112,17 +129,20 @@
 
 /* Scrollbar styling */
 .course-categories-column::-webkit-scrollbar,
-.course-list-column::-webkit-scrollbar {
+.course-list-column::-webkit-scrollbar,
+.loopian-menu-column::-webkit-scrollbar {
     width: 12px;
 }
 
 .course-categories-column::-webkit-scrollbar-track,
-.course-list-column::-webkit-scrollbar-track {
+.course-list-column::-webkit-scrollbar-track,
+.loopian-menu-column::-webkit-scrollbar-track {
     background: #333;
 }
 
 .course-categories-column::-webkit-scrollbar-thumb,
-.course-list-column::-webkit-scrollbar-thumb {
+.course-list-column::-webkit-scrollbar-thumb,
+.loopian-menu-column::-webkit-scrollbar-thumb {
     background-color: #522dd7;
     border-radius: 6px;
     border: 3px solid #333;
@@ -148,33 +168,99 @@
 /* Mobile styles */
 @media (max-width: 768px) {
     .main-menu {
-        flex-direction: row;
-        justify-content: flex-start;
+        flex-direction: column; /* Colocar el logo y el menú en filas separadas */
+        justify-content: center; /* Centrar el contenido */
+        align-items: center; /* Alinear el contenido al centro */
         width: 100%;
+        padding: 0; /* Eliminar padding en vista móvil */
+        margin-left: 0; /* Eliminar margin-left en vista móvil */
+    }
+    .logo {
+        position: relative; /* Cambiar la posición a relativa */
+        flex: 0 0 auto; /* Evitar que el logo se expanda */
+        text-align: center;
+        width: 100%;
+        margin-top: 0; /* Eliminar margen superior en vista móvil */
+        margin-bottom: 10px; /* Añadir margen inferior para separación */
+    }
+    .menu-items {
+        flex: 0 0 auto; /* Evitar que el menú se expanda */
+        display: flex;
+        justify-content: center; /* Centrar el menú */
+        width: 100%;
+    }
+    .menu-items div {
+        margin: 0 5px; /* Reducir el margen entre botones */
+    }
+    .menu-items div a {
+        width: auto;
+        text-align: left;
+        font-size: 16px; /* Tamaño de fuente más pequeño para móviles */
+        padding: 0; /* Eliminar el padding */
+    }
+    .menu-items .courses-menu-item::after,
+    .menu-items .loopian-menu-item::after {
+        content: '\25BC'; /* Símbolo de flecha hacia abajo */
+        margin-left: 5px;
+        color: #522DD7; /* Color de la flecha */
+    }
+    .menu-items .courses-menu-item.open::after,
+    .menu-items .loopian-menu-item.open::after {
+        content: '\25B2'; /* Símbolo de flecha hacia arriba */
+        color: #522DD7; /* Color de la flecha */
+    }
+    .custom-dynamic-course-menu {
+        margin-top: 80px; /* Desplazar el menú desplegable 40px más abajo */
+    }
+    .menu-items div:nth-child(1) {
+        display: none; /* Ocultar el botón "Home" en móviles */
+    }
+    .et_pb_row,
+    .et_pb_column .et_pb_row_inner {
+        padding: 0 !important; /* Forzar padding a 0 */
+    }
+}
+
+/* Small screen styles */
+@media (min-width: 769px) and (max-width: 1000px) {
+    .main-menu {
+        justify-content: space-between; /* Asegura que el logo esté a la izquierda y el menú a la derecha */
+        width: 100%;
+        padding-right: 10px; /* Añadir padding-right para ajustar el margen */
+        margin-left: 0; /* Eliminar margin-left en vista móvil */
     }
     .logo {
         flex: 1;
         text-align: left;
     }
     .menu-items {
+        flex: 1;
         display: flex;
-        flex-direction: column;
-        width: 100%;
+        justify-content: flex-end;
     }
     .menu-items div {
-        width: auto;
+        margin: 0 5px; /* Reducir el margen entre botones */
     }
     .menu-items div a {
-        width: 100%;
+        width: auto;
         text-align: left;
+        font-size: 16px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+        padding: 5px; /* Reducir el tamaño del botón */
     }
-    .menu-items .courses-menu-item, 
-    .menu-items div:nth-child(3), 
-    .menu-items div:nth-child(4) {
-        display: block;
+    .menu-items .courses-menu-item::after,
+    .menu-items .loopian-menu-item::after {
+        content: '\25BC'; /* Símbolo de flecha hacia abajo */
+        margin-left: 5px;
+        color: #522DD7; /* Color de la flecha */
     }
-    .menu-items div:nth-child(1), 
-    .menu-items div:nth-child(2) {
-        display: none;
+    .menu-items .courses-menu-item.open::after,
+    .menu-items .loopian-menu-item.open::after {
+        content: '\25B2'; /* Símbolo de flecha hacia arriba */
+        color: #522DD7; /* Color de la flecha */
+    }
+    .et_pb_row {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
     }
 }

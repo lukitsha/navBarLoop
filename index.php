@@ -2,9 +2,10 @@
 /*
 Plugin Name: Navbar Personalizada 
 Description: A plugin to create a custom course menu with categories and courses.
-Version: 0.4.5
+Version: 0.5.0
 Author: Luca Gaido
 */
+
 
 // Evita el acceso directo
 if (!defined('ABSPATH')) {
@@ -40,18 +41,16 @@ function custom_dynamic_course_menu_shortcode() {
     ?>
     <div class="custom-menu">
         <div class="main-menu">
-            <div class="logo"><a href="<?php echo home_url(); ?>"><img src="https://www.loopian.com.ar/cursos/wp-content/uploads/2020/12/logo14.png" alt="Logo"></a></div>
+            <div class="logo" style="margin-top: 10px;"><a href="<?php echo home_url(); ?>"><img src="https://www.loopian.com.ar/cursos/wp-content/uploads/2020/12/logo14.png" alt="Logo"></a></div>
             <div class="menu-items">
                 <div><a href="<?php echo home_url(); ?>">Home</a></div>
                 <div class="courses-menu-item"><a href="#">Cursos</a></div>
-                <div><a href="<?php echo home_url('/contacto'); ?>">Contacto</a></div>
+                <div class="loopian-menu-item"><a href="#">Loopian</a></div>
                 <div><a href="<?php echo home_url('/aula-virtual'); ?>">Aula Virtual</a></div>
             </div>
-            <div class="menu-toggle"><span>&#9776;</span></div>
         </div>
     </div>
     <div class="fullscreen-panel">
-        <button class="close-button">&times;</button>
         <div class="custom-dynamic-course-menu">
             <div class="course-categories-column">
                 <div class="course-categories">
@@ -65,6 +64,17 @@ function custom_dynamic_course_menu_shortcode() {
             <div class="course-list-column">
                 <div class="loading" style="display: none;">Cargando...</div>
                 <div class="course-list"></div>
+            </div>
+        </div>
+    </div>
+    <div class="fullscreen-panel loopian-panel">
+        <div class="custom-loopian-menu">
+            <div class="loopian-menu-column">
+                <div class="loopian-menu">
+                    <div class="loopian-item"><a href="https://www.loopian.com.ar/nosotros">Nosotros</a></div>
+                    <div class="loopian-item"><a href="https://www.loopian.com.ar/testimonios">Testimonios</a></div>
+                    <div class="loopian-item"><a href="<?php echo home_url('/contacto'); ?>">Contacto</a></div>
+                </div>
             </div>
         </div>
     </div>

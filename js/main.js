@@ -1,16 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
     const coursesMenuItem = document.querySelector('.courses-menu-item');
+    const loopianMenuItem = document.querySelector('.loopian-menu-item');
     const dynamicMenu = document.querySelector('.fullscreen-panel .custom-dynamic-course-menu');
+    const loopianMenu = document.querySelector('.fullscreen-panel.loopian-panel');
     const loadingElement = document.querySelector('.course-list-column .loading');
     const courseList = document.querySelector('.course-list');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menuItems = document.querySelector('.menu-items');
 
     let allCourses = [];
 
     coursesMenuItem.addEventListener('click', function (e) {
         e.preventDefault();
         dynamicMenu.parentElement.classList.toggle('active');
+        coursesMenuItem.classList.toggle('open'); // Añadir o eliminar la clase 'open'
         loadingElement.style.display = 'block';
         courseList.innerHTML = '';
 
@@ -20,16 +21,22 @@ document.addEventListener('DOMContentLoaded', function () {
             loadingElement.style.display = 'none';
             document.querySelector('.category-item').click();
         }
+    });
 
-        // Cierra el menú hamburguesa si está abierto
-        if (menuItems.classList.contains('active')) {
-            menuItems.classList.remove('active');
-        }
+    loopianMenuItem.addEventListener('click', function (e) {
+        e.preventDefault();
+        loopianMenu.classList.toggle('active');
+        loopianMenuItem.classList.toggle('open'); // Añadir o eliminar la clase 'open'
     });
 
     document.addEventListener('click', function (e) {
         if (!dynamicMenu.contains(e.target) && !coursesMenuItem.contains(e.target)) {
             dynamicMenu.parentElement.classList.remove('active');
+            coursesMenuItem.classList.remove('open'); // Eliminar la clase 'open' si se hace clic fuera
+        }
+        if (!loopianMenu.contains(e.target) && !loopianMenuItem.contains(e.target)) {
+            loopianMenu.classList.remove('active');
+            loopianMenuItem.classList.remove('open'); // Eliminar la clase 'open' si se hace clic fuera
         }
     });
 
