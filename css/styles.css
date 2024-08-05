@@ -87,6 +87,7 @@
 .course-categories, .loopian-menu {
     padding: 0;
     margin: 0;
+    text-align: center; /* Centrar el texto */
 }
 
 .course-categories .category-item,
@@ -210,7 +211,10 @@
         color: #522DD7; /* Color de la flecha */
     }
     .custom-dynamic-course-menu {
-        margin-top: 80px; /* Desplazar el menú desplegable 40px más abajo */
+        margin-top: 75px; /* Desplazar el menú desplegable 75px más abajo */
+    }
+    .custom-loopian-menu {
+        margin-top: 75px; /* Desplazar el menú desplegable 75px más abajo */
     }
     .menu-items div:nth-child(1) {
         display: none; /* Ocultar el botón "Home" en móviles */

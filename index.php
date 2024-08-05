@@ -2,9 +2,10 @@
 /*
 Plugin Name: Navbar Personalizada 
 Description: A plugin to create a custom course menu with categories and courses.
-Version: 0.5.0
+Version: 0.5.5
 Author: Luca Gaido
 */
+
 
 
 // Evita el acceso directo
@@ -45,8 +46,7 @@ function custom_dynamic_course_menu_shortcode() {
             <div class="menu-items">
                 <div><a href="<?php echo home_url(); ?>">Home</a></div>
                 <div class="courses-menu-item"><a href="#">Cursos</a></div>
-                <div class="loopian-menu-item"><a href="#">Loopian</a></div>
-                <div><a href="<?php echo home_url('/aula-virtual'); ?>">Aula Virtual</a></div>
+                <div class="loopian-menu-item"><a href="#">Menú</a></div>
             </div>
         </div>
     </div>
@@ -71,9 +71,10 @@ function custom_dynamic_course_menu_shortcode() {
         <div class="custom-loopian-menu">
             <div class="loopian-menu-column">
                 <div class="loopian-menu">
-                    <div class="loopian-item"><a href="https://www.loopian.com.ar/nosotros">Nosotros</a></div>
-                    <div class="loopian-item"><a href="https://www.loopian.com.ar/testimonios">Testimonios</a></div>
-                    <div class="loopian-item"><a href="<?php echo home_url('/contacto'); ?>">Contacto</a></div>
+                    <div class="loopian-item"><a href="https://www.loopian.com.ar/metodo-loopian/">Método Loopian</a></div>
+                    <div class="loopian-item"><a href="https://www.loopian.com.ar/testimonios-de-alumnos/">Testimonio de Alumnos</a></div>
+                    <div class="loopian-item"><a href="https://www.loopian.com.ar/contacto/">Contacto</a></div>
+                    <div class="loopian-item"><a href="https://www.loopian.com.ar/campus/login/index.php">Campus</a></div>
                 </div>
             </div>
         </div>
