@@ -21,7 +21,7 @@ El plugin de la barra de navegación ha sido diseñado para ser fácil de integr
 ### Funcionalidades Adicionales
 
 - **Menú Desplegable**: Menús que se despliegan y contraen con animaciones suaves.
-- **Búsqueda en Tiempo Real**: Barra de búsqueda que muestra resultados instantáneamente mientras el usuario escribe.
+- **Búsqueda en Tiempo Real**: Barra de búsqueda que muestra resultados instantáneamente.
 - **Notificaciones**: Indicadores de notificaciones en tiempo real para alertar a los usuarios sobre nuevos cursos o actualizaciones.
 
 ## Estado del Proyecto
@@ -63,7 +63,7 @@ The navbar plugin is designed to be easily integrated into any WordPress site. I
 ### Additional Functionalities
 
 - **Dropdown Menu**: Menus that expand and collapse with smooth animations.
-- **Real-time Search**: Search bar that shows instant results as the user types.
+- **Real-time Search**: Search bar that shows instant results.
 - **Notifications**: Real-time notification indicators to alert users about new courses or updates.
 
 ## Project Status
