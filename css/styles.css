@@ -4,10 +4,19 @@
 
 .main-menu {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.main-menu div {
+.logo img {
+    max-height: 50px;
+}
+
+.menu-items {
+    display: flex;
+}
+
+.menu-items div {
     margin-right: 20px;
 }
 
@@ -21,7 +30,17 @@
 }
 
 .main-menu a:hover {
-    background: #e5e5f5;
+    background: #e5e5e5;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
 }
 
 .custom-dynamic-course-menu {
@@ -102,17 +121,66 @@
     border: 3px solid #333;
 }
 
-/* Responsive styling */
+/* Estilos para el panel de pantalla completa en móviles */
+.fullscreen-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    overflow: auto;
+    display: none; /* Inicialmente oculto */
+}
+
+.fullscreen-panel.active {
+    display: block; /* Mostrar cuando esté activo */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #522dd7;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    font-size: 30px;
+    color: #333;
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
-    .custom-dynamic-course-menu {
+    .menu-items, .social-icons {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .custom-menu {
         flex-direction: column;
     }
-
-    .course-categories-column, .course-list-column {
-        width: 100%;
+    .main-menu {
+        justify-content: space-between;
     }
-
-    .course-categories .category-item, .course-list .course-item {
-        margin-bottom: 10px;
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .mobile-menu div {
+        margin: 10px 0;
     }
 }
