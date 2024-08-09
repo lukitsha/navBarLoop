@@ -167,6 +167,10 @@
 
 /* Mobile styles */
 @media (max-width: 768px) {
+	.et_pb_row_1_tb_header.et_pb_row {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
     .loopian-navbar-main-menu {
         flex-direction: row; /* Cambiar a fila */
         justify-content: space-between; /* Espacio entre el logo y el menú */
@@ -190,6 +194,7 @@
      .loopian-navbar-menu-items div:first-child {
         display: none; /* Oculta el primer ítem, que es el enlace "Home" */
     }
+	
 }
 
 /* Small screen styles */
@@ -244,13 +249,13 @@
 .loopian-navbar-social-icons {
     display: flex;
     justify-content: center;
-    margin-top: 5px; /* Ajuste del margen superior para los íconos */
+    margin-top: 15px; /* Ajuste del margen superior para los íconos */
 }
 
 .loopian-navbar-social-icons a {
     background-color: #522DD7; /* Color de fondo */
-    width: 30px; /* Ancho del ícono */
-    height: 30px; /* Alto del ícono */
+    width: 40px; /* Ancho del ícono */
+    height: 40px; /* Alto del ícono */
     margin: 0 5px; /* Espaciado entre íconos */
     display: inline-flex;
     align-items: center;
@@ -264,7 +269,7 @@
 }
 
 .social-svg-icon {
-    width: 18px;
-    height: 18px;
+    width: 24px; /* Aumentar el tamaño de los íconos */
+    height: 24px; /* Aumentar el tamaño de los íconos */
     fill: #ffffff; /* Color de los íconos */
 }

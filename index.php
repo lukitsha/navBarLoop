@@ -2,7 +2,7 @@
 /*
 Plugin Name: Navbar Personalizada Loopian
 Description: A plugin to create a custom course menu with categories and courses.
-Version: 0.7.4
+Version: 0.7.5
 Author: Luca Gaido
 */
 
