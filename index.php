@@ -2,7 +2,7 @@
 /*
 Plugin Name: Navbar Personalizada Loopian
 Description: A plugin to create a custom course menu with categories and courses.
-Version: 0.7.0
+Version: 0.7.3
 Author: Luca Gaido
 */
 
@@ -73,6 +73,13 @@ function custom_dynamic_course_menu_shortcode() {
                     <div class="loopian-navbar-loopian-item"><a href="<?php echo home_url('/testimonios-de-alumnos'); ?>">Testimonio de Alumnos</a></div>
                     <div class="loopian-navbar-loopian-item"><a href="<?php echo home_url('/contacto'); ?>">Contacto</a></div>
                     <div class="loopian-navbar-loopian-item"><a href="<?php echo home_url('/campus/login/index.php'); ?>">Campus</a></div>
+                </div>
+                <!-- Nueva fila para íconos sociales -->
+                <div class="loopian-navbar-social-icons">
+                    <a href="https://www.tiktok.com/@loopiancursos" class="social-icon social-tiktok" title="TikTok" target="_blank"></a>
+                    <a href="https://www.instagram.com/loopianeducacion/" class="social-icon social-instagram et-social-instagram" title="Instagram" target="_blank"></a>
+                    <a href="https://www.facebook.com/loopian" class="social-icon social-facebook" title="Facebook" target="_blank"></a>
+                    <a href="https://ar.linkedin.com/company/loopian---centro-de-educaci%C3%B3n-a-distancia" class="social-icon social-linkedin" title="LinkedIn" target="_blank"></a>
                 </div>
             </div>
         </div>

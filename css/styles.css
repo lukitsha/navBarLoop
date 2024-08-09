@@ -68,8 +68,8 @@
     background-color: #181818;
     color: white;
     z-index: 9999;
-    padding-top: 20px; /* Ajuste para reducir la altura del contenido */
-    padding-bottom: 20px; /* Ajuste para reducir la altura del contenido */
+    padding-top: 7px; /* Ajuste para reducir la altura del contenido */
+    padding-bottom: 7px; /* Ajuste para reducir la altura del contenido */
 }
 
 .loopian-navbar-loading {
@@ -173,7 +173,7 @@
         align-items: center; /* Alinear verticalmente al centro */
         width: 100%;
         padding: 0; /* Eliminar padding */
-        margin-left: 10px; /* Eliminar margin-left */
+        margin-left: 0; /* Eliminar margin-left */
     }
     .loopian-navbar-logo {
         position: relative; /* Mantener la posición relativa */
@@ -198,7 +198,6 @@
         justify-content: space-between; /* Asegura que el logo esté a la izquierda y el menú a la derecha */
         width: 100%;
         padding-right: 10px; /* Añadir padding-right para ajustar el margen */
-		padding-left: 10px;
         margin-left: 0; /* Eliminar margin-left en vista móvil */
     }
     .loopian-navbar-logo {
@@ -239,4 +238,29 @@
     background-color: #D2D22D;
     border-radius: 6px;
     padding-top: 3px;
+}
+
+/* Estilo para los íconos sociales */
+.loopian-navbar-social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Ajuste del margen superior para los íconos */
+}
+
+.loopian-navbar-social-icons a {
+    color: #ffffff; /* Color del ícono */
+    background-color: #522DD7; /* Color de fondo */
+    width: 30px; /* Ancho del ícono */
+    height: 30px; /* Alto del ícono */
+    margin: 0 5px; /* Espaciado entre íconos */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Hacer los íconos redondos */
+    font-size: 18px; /* Tamaño del ícono */
+    text-decoration: none;
+}
+
+.loopian-navbar-social-icons a:hover {
+    background-color: #333333; /* Cambiar el color de fondo al hacer hover */
 }
