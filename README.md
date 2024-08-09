@@ -2,8 +2,8 @@
 
 Este proyecto tiene como objetivo crear una barra de navegación personalizada e interactiva para una empresa de venta de cursos, desarrollada como un plugin para WordPress. Utiliza PHP, JavaScript y CSS, e integra funcionalidades dinámicas y obtención de datos en tiempo real desde una base de datos.
 
-VER NAVBAR: https://www.loopian.com.ar/borrador-automatico/
-VER NAVBAR APLICADA (EJEMPLO): https://www.loopian.com.ar/curso/ceremonial-y-protocolo/#
+VER NAVBAR: https://www.loopian.com.ar/borrador-automatico/ .
+VER NAVBAR APLICADA (EJEMPLO): https://www.loopian.com.ar/curso/ceremonial-y-protocolo/ .
 
 ## Características
 
