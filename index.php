@@ -2,7 +2,7 @@
 /*
 Plugin Name: Navbar Personalizada Loopian
 Description: A plugin to create a custom course menu with categories and courses.
-Version: 0.7.3
+Version: 0.7.4
 Author: Luca Gaido
 */
 
@@ -76,10 +76,18 @@ function custom_dynamic_course_menu_shortcode() {
                 </div>
                 <!-- Nueva fila para íconos sociales -->
                 <div class="loopian-navbar-social-icons">
-                    <a href="https://www.tiktok.com/@loopiancursos" class="social-icon social-tiktok" title="TikTok" target="_blank"></a>
-                    <a href="https://www.instagram.com/loopianeducacion/" class="social-icon social-instagram et-social-instagram" title="Instagram" target="_blank"></a>
-                    <a href="https://www.facebook.com/loopian" class="social-icon social-facebook" title="Facebook" target="_blank"></a>
-                    <a href="https://ar.linkedin.com/company/loopian---centro-de-educaci%C3%B3n-a-distancia" class="social-icon social-linkedin" title="LinkedIn" target="_blank"></a>
+                    <a href="https://www.tiktok.com/@loopiancursos" class="social-icon social-tiktok" title="TikTok" target="_blank">
+                        <img src="https://www.svgrepo.com/show/327400/logo-tiktok.svg" alt="TikTok" class="social-svg-icon">
+                    </a>
+                    <a href="https://www.instagram.com/loopianeducacion/" class="social-icon social-instagram" title="Instagram" target="_blank">
+                        <img src="https://www.svgrepo.com/show/521711/instagram.svg" alt="Instagram" class="social-svg-icon">
+                    </a>
+                    <a href="https://www.facebook.com/loopian" class="social-icon social-facebook" title="Facebook" target="_blank">
+                        <img src="https://www.svgrepo.com/show/521654/facebook.svg" alt="Facebook" class="social-svg-icon">
+                    </a>
+                    <a href="https://ar.linkedin.com/company/loopian---centro-de-educaci%C3%B3n-a-distancia" class="social-icon social-linkedin" title="LinkedIn" target="_blank">
+                        <img src="https://www.svgrepo.com/show/521725/linkedin.svg" alt="LinkedIn" class="social-svg-icon">
+                    </a>
                 </div>
             </div>
         </div>
