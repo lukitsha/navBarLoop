@@ -2,11 +2,9 @@
 /*
 Plugin Name: Navbar Personalizada Loopian
 Description: A plugin to create a custom course menu with categories and courses.
-Version: 0.6.0
+Version: 0.7.0
 Author: Luca Gaido
 */
-
-
 
 // Evita el acceso directo
 if (!defined('ABSPATH')) {
@@ -15,11 +13,11 @@ if (!defined('ABSPATH')) {
 
 // Incluye los estilos y scripts
 function custom_dynamic_course_menu_enqueue_scripts() {
-    wp_enqueue_style('custom-dynamic-course-menu-styles', plugin_dir_url(__FILE__) . 'css/styles.css');
-    wp_enqueue_script('custom-dynamic-course-menu-scripts', plugin_dir_url(__FILE__) . 'js/script.js', array('jquery'), null, true);
+    wp_enqueue_style('loopian-navbar-styles', plugin_dir_url(__FILE__) . 'css/styles.css');
+    wp_enqueue_script('loopian-navbar-scripts', plugin_dir_url(__FILE__) . 'js/script.js', array('jquery'), null, true);
 
     // Pasa la URL de AJAX al script
-    wp_localize_script('custom-dynamic-course-menu-scripts', 'ajax_object', array(
+    wp_localize_script('loopian-navbar-scripts', 'ajax_object', array(
         'ajax_url' => admin_url('admin-ajax.php')
     ));
 }
@@ -40,41 +38,41 @@ function custom_dynamic_course_menu_shortcode() {
 
     ob_start();
     ?>
-    <div class="custom-menu">
-        <div class="main-menu">
-            <div class="logo" style="margin-top: 10px;"><a href="<?php echo home_url(); ?>"><img src="https://www.loopian.com.ar/cursos/wp-content/uploads/2020/12/logo14.png" alt="Logo"></a></div>
-            <div class="menu-items">
+    <div class="loopian-navbar-custom-menu">
+        <div class="loopian-navbar-main-menu">
+            <div class="loopian-navbar-logo" style="margin-top: 10px;"><a href="<?php echo home_url(); ?>"><img src="https://www.loopian.com.ar/cursos/wp-content/uploads/2020/12/logo14.png" alt="Logo"></a></div>
+            <div class="loopian-navbar-menu-items">
                 <div><a href="<?php echo home_url(); ?>">Home</a></div>
-                <div class="courses-menu-item"><a href="#">Cursos</a></div>
-                <div class="loopian-menu-item"><a href="#">Menú</a></div>
+                <div class="loopian-navbar-courses-menu-item"><a href="#">Cursos</a></div>
+                <div class="loopian-navbar-loopian-menu-item"><a href="#">≡</a></div>
             </div>
         </div>
     </div>
-    <div class="fullscreen-panel">
-        <div class="custom-dynamic-course-menu">
-            <div class="course-categories-column">
-                <div class="course-categories">
+    <div class="loopian-navbar-fullscreen-panel">
+        <div class="loopian-navbar-custom-dynamic-course-menu">
+            <div class="loopian-navbar-course-categories-column">
+                <div class="loopian-navbar-course-categories">
                     <?php foreach ($categories as $category): ?>
-                        <div class="category-item" data-category-id="<?php echo esc_attr($category->term_id); ?>">
+                        <div class="loopian-navbar-category-item" data-category-id="<?php echo esc_attr($category->term_id); ?>">
                             <a href="#"><?php echo esc_html($category->name); ?></a>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
-            <div class="course-list-column">
-                <div class="loading" style="display: none;">Cargando...</div>
-                <div class="course-list"></div>
+            <div class="loopian-navbar-course-list-column">
+                <div class="loopian-navbar-loading" style="display: none;">Cargando...</div>
+                <div class="loopian-navbar-course-list"></div>
             </div>
         </div>
     </div>
-    <div class="fullscreen-panel loopian-panel">
-        <div class="custom-loopian-menu">
-            <div class="loopian-menu-column">
-                <div class="loopian-menu">
-                    <div class="loopian-item"><a href="<?php echo home_url('/metodo-loopian'); ?>">Método Loopian</a></div>
-                    <div class="loopian-item"><a href="<?php echo home_url('/testimonios-de-alumnos'); ?>">Testimonio de Alumnos</a></div>
-                    <div class="loopian-item"><a href="<?php echo home_url('/contacto'); ?>">Contacto</a></div>
-                    <div class="loopian-item"><a href="<?php echo home_url('/campus/login/index.php'); ?>">Campus</a></div>
+    <div class="loopian-navbar-fullscreen-panel loopian-navbar-loopian-panel">
+        <div class="loopian-navbar-custom-loopian-menu">
+            <div class="loopian-navbar-loopian-menu-column">
+                <div class="loopian-navbar-loopian-menu">
+                    <div class="loopian-navbar-loopian-item"><a href="<?php echo home_url('/metodo-loopian'); ?>">Método Loopian</a></div>
+                    <div class="loopian-navbar-loopian-item"><a href="<?php echo home_url('/testimonios-de-alumnos'); ?>">Testimonio de Alumnos</a></div>
+                    <div class="loopian-navbar-loopian-item"><a href="<?php echo home_url('/contacto'); ?>">Contacto</a></div>
+                    <div class="loopian-navbar-loopian-item"><a href="<?php echo home_url('/campus/login/index.php'); ?>">Campus</a></div>
                 </div>
             </div>
         </div>

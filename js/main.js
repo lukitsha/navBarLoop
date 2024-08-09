@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const coursesMenuItem = document.querySelector('.courses-menu-item');
-    const loopianMenuItem = document.querySelector('.loopian-menu-item');
-    const dynamicMenu = document.querySelector('.fullscreen-panel .custom-dynamic-course-menu');
-    const loopianMenu = document.querySelector('.fullscreen-panel.loopian-panel');
-    const loadingElement = document.querySelector('.course-list-column .loading');
-    const courseList = document.querySelector('.course-list');
+    const coursesMenuItem = document.querySelector('.loopian-navbar-courses-menu-item');
+    const loopianMenuItem = document.querySelector('.loopian-navbar-loopian-menu-item');
+    const dynamicMenu = document.querySelector('.loopian-navbar-fullscreen-panel .loopian-navbar-custom-dynamic-course-menu');
+    const loopianMenu = document.querySelector('.loopian-navbar-fullscreen-panel.loopian-navbar-loopian-panel');
+    const loadingElement = document.querySelector('.loopian-navbar-course-list-column .loopian-navbar-loading');
+    const courseList = document.querySelector('.loopian-navbar-course-list');
 
     let allCourses = [];
 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             fetchCourses();
         } else {
             loadingElement.style.display = 'none';
-            document.querySelector('.category-item').click();
+            document.querySelector('.loopian-navbar-category-item').click();
         }
     });
 
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 loadingElement.style.display = 'none';
                 if (data.success) {
                     allCourses = data.data.courses;
-                    const categoryItems = document.querySelectorAll('.category-item');
+                    const categoryItems = document.querySelectorAll('.loopian-navbar-category-item');
 
                     categoryItems.forEach(item => {
                         item.addEventListener('click', function (e) {
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             const filteredCourses = allCourses.filter(course => course.category_id == categoryId);
                             courseList.innerHTML = '';
                             filteredCourses.forEach(course => {
-                                courseList.innerHTML += '<div class="course-item"><a href="' + course.link + '">' + course.title + '</a></div>';
+                                courseList.innerHTML += '<div class="loopian-navbar-course-item"><a href="' + course.link + '">' + course.title + '</a></div>';
                             });
                             // Marcar la categoría activa
                             categoryItems.forEach(cat => cat.classList.remove('active'));
