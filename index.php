@@ -40,11 +40,17 @@ function custom_dynamic_course_menu_shortcode() {
     ?>
     <div class="loopian-navbar-custom-menu">
         <div class="loopian-navbar-main-menu">
-            <div class="loopian-navbar-logo" style="margin-top: 10px;"><a href="<?php echo home_url(); ?>"><img src="https://www.loopian.com.ar/cursos/wp-content/uploads/2020/12/logo14.png" alt="Logo"></a></div>
+            <div class="loopian-navbar-logo" style="margin-top: 10px;">
+                <a href="<?php echo home_url(); ?>">
+                    <img src="https://www.loopian.com.ar/cursos/wp-content/uploads/2020/12/logo14.png" height="50px" alt="Logo">
+                </a>
+            </div>
             <div class="loopian-navbar-menu-items">
                 <div><a href="<?php echo home_url(); ?>">Home</a></div>
                 <div class="loopian-navbar-courses-menu-item"><a href="#">Cursos</a></div>
-                <div class="loopian-navbar-loopian-menu-item"><a href="#">≡</a></div>
+                <div class="loopian-navbar-loopian-menu-item">
+                    <a href="#"><i class="fas fa-bars"></i></a>
+                </div>
             </div>
         </div>
     </div>
@@ -93,8 +99,9 @@ function custom_dynamic_course_menu_shortcode() {
         </div>
     </div>
     <?php
-    return ob_get_clean();
+    return trim(ob_get_clean());
 }
+
 
 add_shortcode('custom_dynamic_course_menu', 'custom_dynamic_course_menu_shortcode');
 

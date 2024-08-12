@@ -242,7 +242,12 @@
 .loopian-navbar-loopian-menu-item {
     background-color: #D2D22D;
     border-radius: 6px;
-    padding-top: 3px;
+    padding: 8px 5px 5px 5px;
+}
+
+.loopian-navbar-loopian-menu-item i {
+    font-size: 1.2em; /* Aumenta o disminuye según necesites */
+    color: #522DD7; /* Cambia el color si lo deseas */
 }
 
 /* Estilo para los íconos sociales */
@@ -273,3 +278,4 @@
     height: 24px; /* Aumentar el tamaño de los íconos */
     fill: #ffffff; /* Color de los íconos */
 }
+
