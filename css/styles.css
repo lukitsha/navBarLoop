@@ -15,7 +15,7 @@
 
 .loopian-navbar-logo {
     /*position: absolute;*/
-	align-content: left;
+    align-content: left;
     left: 0;
     margin-top: 10px; /* Ajuste del margen superior para el logo */
 }
@@ -95,6 +95,10 @@
     margin-bottom: 10px;
 }
 
+.loopian-navbar-course-categories .loopian-navbar-category-item {
+    text-align:right;
+}
+
 .loopian-navbar-course-categories .loopian-navbar-category-item > a,
 .loopian-navbar-loopian-menu .loopian-navbar-loopian-item > a {
     display: block;
@@ -128,6 +132,22 @@
     background: #333;
 }
 
+/* Estilo para el botón "ver todos" */
+.loopian-navbar-view-all-button a {
+    display: block;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #522DD7;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.loopian-navbar-view-all-button a:hover {
+    background-color: #333;
+}
+
 /* Scrollbar styling */
 .loopian-navbar-course-categories-column::-webkit-scrollbar,
 .loopian-navbar-course-list-column::-webkit-scrollbar,
@@ -154,7 +174,6 @@
     position: relative;
     left: 0;
     width: 100vw;
-    /*height: calc(100% - 35px);*/
     background-color: white;
     z-index: 9999;
     overflow: auto;
@@ -167,7 +186,7 @@
 
 /* Mobile styles */
 @media (max-width: 768px) {
-	.et_pb_row_1_tb_header.et_pb_row {
+    .et_pb_row_1_tb_header.et_pb_row {
         padding-top: 0px !important;
         padding-bottom: 0px !important;
     }
@@ -194,7 +213,7 @@
      .loopian-navbar-menu-items div:first-child {
         display: none; /* Oculta el primer ítem, que es el enlace "Home" */
     }
-	
+    
 }
 
 /* Small screen styles */
@@ -278,4 +297,3 @@
     height: 24px; /* Aumentar el tamaño de los íconos */
     fill: #ffffff; /* Color de los íconos */
 }
-
