@@ -2,7 +2,7 @@
 /*
 Plugin Name: Navbar Personalizada Loopian
 Description: A plugin to create a custom course menu with categories and courses.
-Version: 0.8.1
+Version: 0.8.5
 Author: Luca Gaido
 */
 
@@ -74,6 +74,13 @@ function custom_dynamic_course_menu_shortcode() {
                 </div>
             </div>
         </div>
+        <!-- Botón de WhatsApp debajo del menú de cursos -->
+        <div class="loopian-navbar-whatsapp-button">
+            <a href="https://wa.me/5493512620001?text=Hola!%20me%20interesa%20recibir%20más%20información%20sobre%20los%20cursos%20de%20Loopian!" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" height="30px">
+                Contáctanos por WhatsApp
+            </a>
+        </div>
     </div>
     <div class="loopian-navbar-fullscreen-panel loopian-navbar-loopian-panel">
         <div class="loopian-navbar-custom-loopian-menu">
@@ -96,6 +103,13 @@ function custom_dynamic_course_menu_shortcode() {
                     </a>
                     <a href="https://ar.linkedin.com/company/loopian---centro-de-educaci%C3%B3n-a-distancia" class="social-icon social-linkedin" title="LinkedIn" target="_blank">
                         <img src="https://www.svgrepo.com/show/521725/linkedin.svg" alt="LinkedIn" class="social-svg-icon">
+                    </a>
+                </div>
+                <!-- Botón de WhatsApp debajo de los íconos sociales en el menú hamburguesa -->
+                <div class="loopian-navbar-whatsapp-button">
+                    <a href="https://wa.me/5493512620001?text=Hola!%20me%20interesa%20recibir%20más%20información%20sobre%20los%20cursos%20de%20Loopian!" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" height="30px">
+                        Contáctanos por WhatsApp
                     </a>
                 </div>
             </div>
